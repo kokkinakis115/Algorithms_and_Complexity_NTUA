@@ -1,13 +1,13 @@
 from subprocess import PIPE, Popen
 import time
 
-for n in range(1, 34):
+for n in range(0, 34):
     startTime = time.time()
-    inputFile = f'./lab02/salaries/input{n}.txt'
-    outputFile = f'./lab02/salaries/output{n}.txt'
+    inputFile = f'./lab02/bazaar/input{n}.txt'
+    outputFile = f'./lab02/bazaar/output{n}.txt'
     f = open(outputFile)
     output = f.read()
-    command = "salaries.exe < " + inputFile
+    command = "agores.exe < " + inputFile
     process = Popen(command, shell=True, stdout=PIPE, stderr=PIPE)
     producedOutput, err = process.communicate()
 

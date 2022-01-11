@@ -55,7 +55,10 @@ int main() {
 
   for (int i = 0; i < M; i++) { //creation of 9 arrays that contain all offers about one product from one merchant
                                 //cntr keeps kount of how many offers were given per item and merchant
-    cin >> merchant >> type >> nr >> price;
+    scanf("%d", &merchant);
+    type = getchar();
+    scanf("%d %d\n", &nr, &price);
+    //cin >> merchant >> type >> nr >> price;
     if (merchant == 1) {
       if (type == 'A') {
         P[cntr[0]][0][0] = nr;
@@ -133,10 +136,11 @@ int main() {
   }
 
   if (min_cost >= 3*infinity) {
-    cout << -1 << endl;
+    printf("-1\n");
+    //cout << -1 << endl;
     return 0;
   }
-
-  cout << min_cost << endl;
+  printf("%d\n", min_cost);
+  //cout << min_cost << endl;
   return 0;
 }

@@ -115,10 +115,12 @@ int main()
 {
 
     int N, K;
-    cin >> N >> K;
+    scanf("%d %d", &N, &K);
+    //cin >> N >> K;
     int *salaries = (int*)malloc(N*sizeof(int));
     for (int i = 0; i < N; i++) {
-      cin >> salaries[i];
+      //cin >> salaries[i];
+      scanf("%d", &salaries[i]);
     }
 
     vector<int> IncTails, DecTails;
@@ -134,7 +136,7 @@ int main()
     // for (int i = 0; i<DecPair.size(); i++) {
     //   cout << DecPair[i].first << " " << DecPair[i].second << endl;
     // }
-
-    cout << max(IncPair[N-1].first, tamper(IncPair, DecPair, N, K)) << endl;
+    printf("%d\n", max(IncPair[N-1].first, tamper(IncPair, DecPair, N, K)));
+    //cout << max(IncPair[N-1].first, tamper(IncPair, DecPair, N, K)) << endl;
     return 0;
 }
