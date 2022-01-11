@@ -39,13 +39,11 @@ void LongestIncreasingSubsequenceLength(int salaries[], vector<pair<int,int>>& I
 
     for (int i = 1; i < size; i++) {
 
-      // new smallest value
       if (salaries[i] < IncTails[0]) {
         IncTails[0] = salaries[i];
         IncPair.push_back(make_pair(length, Tail_max));
       }
 
-      // v[i] extends largest subsequence
       else if (salaries[i] > IncTails[length - 1]) {
         length++;
         IncTails.push_back(salaries[i]);
@@ -129,13 +127,6 @@ int main()
     LongestDecreasingSubsequenceLength(salaries, DecPair, DecTails, N);
     LongestIncreasingSubsequenceLength(salaries, IncPair, IncTails, N);
 
-    // for (int i = 0; i<IncPair.size(); i++) {
-    //   cout << IncPair[i].first << " " << IncPair[i].second << endl;
-    // }
-
-    // for (int i = 0; i<DecPair.size(); i++) {
-    //   cout << DecPair[i].first << " " << DecPair[i].second << endl;
-    // }
     printf("%d\n", max(IncPair[N-1].first, tamper(IncPair, DecPair, N, K)));
     //cout << max(IncPair[N-1].first, tamper(IncPair, DecPair, N, K)) << endl;
     return 0;
